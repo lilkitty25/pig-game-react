@@ -34,5 +34,38 @@ function App() {
   
   };
   
+// Función para tirar el dado
+
+const throwDice = () => {
+
+  const dice = Math.trunc(Math.random() * 6) + 1;
+  
+  setDiceImage(`dice-${dice}.png`);
+  
+    
+  
+  if (dice !== 1) {
+  
+  setCurrentScore((prev) => prev + dice);
+  
+  } else {
+  
+  switchPlayer();
+  
+  }
+  
+  };
+  
+    
+  
+  // Cambiar de jugador
+  
+  const switchPlayer = () => {
+  
+  setActivePlayer((prev) => (prev === 0 ? 1 : 0));
+  
+  setCurrentScore(0);
+  
+  };
 
 export default App;

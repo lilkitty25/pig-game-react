@@ -67,5 +67,49 @@ const throwDice = () => {
   setCurrentScore(0);
   
   };
+  // Función para guardar el puntaje y verificar si alguien gana
+
+const hold = () => {
+
+  const newScores = [...score];
+  
+  newScores[activePlayer] += currentScore;
+  
+    
+  
+  if (newScores[activePlayer] >= 100) {
+  
+  endGame();
+  
+  } else {
+  
+  setScore(newScores);
+  
+  switchPlayer();
+  
+  }
+  
+  };
+  
+    
+  
+  // Finaliza el juego
+  
+  const endGame = () => {
+  
+  setGameOver(true);
+  
+  };
+  
+    
+  
+  // Función para iniciar un nuevo juego
+  
+  const newGame = () => {
+  
+  initData();
+  
+  };
+  
 
 export default App;

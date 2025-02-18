@@ -1,35 +1,38 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+
+import "./App.css"; 
 
 function App() {
-  const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
-}
+  // Estado de la aplicación
+  
+  const [score, setScore] = useState([0, 0]); // Puntajes de los jugadores
+  
+  const [currentScore, setCurrentScore] = useState(0); // Puntaje actual
+  
+  const [activePlayer, setActivePlayer] = useState(0); // Jugador activo
+  
+  const [gameOver, setGameOver] = useState(false); // Estado de fin de juego
+  
+  const [diceImage, setDiceImage] = useState("dice-5.png"); // Imagen del dado
+  
+    
+  
+  // Función para inicializar los datos del juego
+  
+  const initData = () => {
+  
+  setScore([0, 0]);
+  
+  setCurrentScore(0);
+  
+  setActivePlayer(0);
+  
+  setGameOver(false);
+  
+  setDiceImage("dice-5.png");
+  
+  };
+  
 
 export default App;
